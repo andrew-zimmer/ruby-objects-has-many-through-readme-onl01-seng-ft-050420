@@ -8,6 +8,7 @@ class Customer
     @name = name 
     @@all << self
     @meals = []
+    @waiters = []
   end 
   
   def self.all 
@@ -17,9 +18,14 @@ class Customer
   def new_meal(waiter, total, tip) 
     meal = Meal.new(waiter,self,total,tip)
     @meals << meal
+    @waiters << watiter
   end 
   
   def meals 
     @meals
+  end 
+  
+  def waiters
+    @waiters
   end 
 end
