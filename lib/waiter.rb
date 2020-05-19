@@ -15,11 +15,10 @@ class Waiter
   end 
   
   def new_meal (custumer, total, tip)
-    meal = Meal.new(self,custumer,total,tip)
-    @meals << meal
+    Meal.new(self,custumer,total,tip)
   end 
   
   def meals
-    @meals
+    Meal.all.select {|meal| meal.waiter == waiter}
   end 
 end
